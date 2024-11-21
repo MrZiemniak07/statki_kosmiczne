@@ -21,11 +21,6 @@ void GameBoard::refresh()
     wrefresh(window_);
 }
 
-chtype GameBoard::getIinput()
-{
-    return wgetch(window_);
-}
-
 void GameBoard::clear()
 {
     wclear(window_);

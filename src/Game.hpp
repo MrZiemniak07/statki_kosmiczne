@@ -10,16 +10,18 @@ public:
 
     static int getScore();
     bool IsGamever();
+    chtype getInput();
 
     static void setScore(int newScore);
     void setIsGameover(bool newIsGameover);
-    
+    void setInput(chtype newInput);
+
     void processInput();
     void updateState();
     void redraw();
 
 private:
     static int score_;
-    const GameBoard gameBoard_;
+    GameBoard gameBoard_;
     bool IsGameover_;
 };

@@ -5,11 +5,10 @@ int Game::score_ = 0;
 Game::Game(int height, int width)
 {
     gameBoard_ = GameBoard(height, width);
-    gameBoard_.initialize();
     IsGameover_ = false;
 }
 
-static int Game::getScore()
+int Game::getScore()
 {
     return score_;
 }
@@ -19,7 +18,7 @@ bool Game::IsGamever()
     return IsGameover_;
 }
 
-static void Game::setScore(int newScore)
+void Game::setScore(int newScore)
 {
     score_ = newScore;
 }
@@ -41,7 +40,7 @@ void Game::updateState()
 
 void Game::redraw()
 {
-    board_.refresh();
+    gameBoard_.refresh();
     // NA POTEM
 }
 

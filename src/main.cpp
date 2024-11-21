@@ -37,7 +37,7 @@ int main()
 
     Game game(BOARD_ROWS, BOARD_COLS);
 
-    while (!game.IsOver())
+    while (!game.IsGamever())
     {
         game.processInput();
 

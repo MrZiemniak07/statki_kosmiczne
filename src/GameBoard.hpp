@@ -13,6 +13,7 @@ public:
 
     static GameEntities getEntitieAtPosition(int height, int width);
     static chtype getSignAtPosition(int height, int width);
+    chtype getInput();
     int getheight();
     int getWidth();
 
