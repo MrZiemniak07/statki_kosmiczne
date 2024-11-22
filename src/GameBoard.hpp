@@ -2,7 +2,7 @@
 
 #include <ncurses.h>
 #include <vector>
-#include "GameEntiies.hpp"
+#include "GameEntities.hpp"
 
 class GameBoard
 {

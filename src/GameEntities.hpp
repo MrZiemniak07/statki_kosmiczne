@@ -25,7 +25,7 @@ public:
     };
 
     GameEntities();
-    virtual ~GameEntities() = default;
+    ~GameEntities() = default;
 
     int getPositionY();
     int getPositionX();
