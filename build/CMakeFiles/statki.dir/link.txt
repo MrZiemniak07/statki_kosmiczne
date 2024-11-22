@@ -1,1 +1,0 @@
-/usr/bin/c++ -Wl,--dependency-file,CMakeFiles/statki.dir/link.d CMakeFiles/statki.dir/src/main.cpp.o CMakeFiles/statki.dir/src/GameBoard.cpp.o CMakeFiles/statki.dir/src/Game.cpp.o CMakeFiles/statki.dir/src/GameEntities.cpp.o -o statki  -lcurses -lform

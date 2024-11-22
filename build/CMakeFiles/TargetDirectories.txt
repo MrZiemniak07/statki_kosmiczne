@@ -1,3 +1,0 @@
-/home/ziemniak/projects/c++/copia/statki_kosmiczne/build/CMakeFiles/statki.dir
-/home/ziemniak/projects/c++/copia/statki_kosmiczne/build/CMakeFiles/edit_cache.dir
-/home/ziemniak/projects/c++/copia/statki_kosmiczne/build/CMakeFiles/rebuild_cache.dir
