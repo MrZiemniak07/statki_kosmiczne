@@ -1,6 +1,6 @@
 #include "Game.hpp"
 
-int Game::score_ = 0;
+
 
 Game::Game(int height, int width)
 {

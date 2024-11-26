@@ -45,7 +45,6 @@ public:
     void setDiretion(Direction newDirection);
     void setType(Type newType);
 
-
 protected:
     int positionY_, positionX_, color_, healthPoints_;
     std::chrono::seconds timePerTile_;

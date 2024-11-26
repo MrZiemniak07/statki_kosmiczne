@@ -8,11 +8,11 @@ public:
     Game(int height, int width);
     ~Game() = default;
 
-    static int getScore();
+    int getScore();
     bool IsGamever();
     chtype getInput();
 
-    static void setScore(int newScore);
+    void setScore(int newScore);
     void setIsGameover(bool newIsGameover);
     void setInput(chtype newInput);
 
@@ -21,7 +21,7 @@ public:
     void redraw();
 
 private:
-    static int score_;
+    int score_;
     GameBoard gameBoard_;
     bool IsGameover_;
 };
