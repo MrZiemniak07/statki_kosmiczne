@@ -24,14 +24,13 @@ public:
 
     };
 
-    GameEntities();
+    GameEntities() = default;
     ~GameEntities() = default;
 
     int getPositionY();
     int getPositionX();
     int getColor();
-    int getHealthPoints();
-    std::chrono::seconds getTimePerTile();
+    int getSpeed();
     chtype getSign();
     Direction getDiretion();
     Type getType();
@@ -39,15 +38,14 @@ public:
     void setPositionY(int newPositionY);
     void setPositionX(int newPositionX);
     void setColor(int newColor);
-    void setHealthPoints(int newHealthPoints);
-    void setTimePerTile(std::chrono::seconds newTimePerTile);
+    void setSpeed(int newSpeed);
     void setSign(chtype newsign);
     void setDiretion(Direction newDirection);
     void setType(Type newType);
 
 protected:
-    int positionY_, positionX_, color_, healthPoints_;
-    std::chrono::seconds timePerTile_;
+    int positionY_, positionX_, color_;
+    int speed_;
     chtype sign_;
     Direction direction_;
     Type type_;

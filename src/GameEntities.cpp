@@ -2,13 +2,6 @@
 
 #include <chrono>
 
-GameEntities::GameEntities()
-{
-    
-}
-
-
-
 int GameEntities::getPositionY()
 {
     return positionY_;
@@ -24,14 +17,9 @@ int GameEntities::getColor()
     return color_;
 }
 
-int GameEntities::getHealthPoints()
+int GameEntities::getSpeed()
 {
-    return healthPoints_;
-}
-
-std::chrono::seconds GameEntities::getTimePerTile()
-{
-    return timePerTile_;
+    return speed_;
 }
 
 chtype GameEntities::getSign()
@@ -65,14 +53,9 @@ void GameEntities::setColor(int newColor)
     color_ = newColor;
 }
 
-void GameEntities::setHealthPoints(int newHealthPoints)
+void GameEntities::setSpeed(int newSpeed)
 {
-    healthPoints_ = newHealthPoints;
-}
-
-void GameEntities::setTimePerTile(std::chrono::seconds newTimePerTile)
-{
-    timePerTile_ = newTimePerTile;
+    speed_ = newSpeed;
 }
 
 void GameEntities::setSign(chtype newsign)

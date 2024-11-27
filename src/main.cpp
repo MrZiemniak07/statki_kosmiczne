@@ -1,23 +1,7 @@
 #include <ncurses.h>
+#include <chrono>
 #include "Game.hpp"
-
-#define BOARD_DIM 20
-#define BOARD_ROWS BOARD_DIM
-#define BOARD_COLS BOARD_DIM * 2
-
-#define BULLET_SPEED 1s
-#define RELOAD_SPEED 1s
-#define ENEMY_RELOAD_SPEED 5s
-
-#define BULLET_DAMABE 1
-#define ENEMY_BULLET_DAMAGE 1
-
-#define BACKGROUND_COLOR COLOR_BLACK 
-#define PLAYER_COLOR COLOR_WHITE
-#define ENEMY_COLOR COLOR_WHITE
-
-#define BULLET_COLOR COLOR_YELLOW
-#define EMEMY_BULLET_COLOR COLOR_RED
+#include "CONSTANTS.hpp"
 
 int main()
 {
@@ -39,6 +23,8 @@ int main()
 
     while (!game.IsGamever())
     {
+        game.caclulateDeltaTime();
+
         game.processInput();
 
         game.updateState();

@@ -23,7 +23,7 @@ GameEntities GameBoard::getEntitieAtPosition(int height, int width)
 
 chtype GameBoard::getSignAtPosition(int height, int width)
 {
-    allSignsPositions_.at(height).at(width);
+    return allSignsPositions_.at(height).at(width);
 }
 
 int GameBoard::getheight()
