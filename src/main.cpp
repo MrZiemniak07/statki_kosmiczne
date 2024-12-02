@@ -1,5 +1,4 @@
 #include <ncurses.h>
-#include <chrono>
 #include "Game.hpp"
 #include "CONSTANTS.hpp"
 

@@ -1,33 +1,12 @@
 #include "GameEntities.hpp"
 
-#include <chrono>
+#include <vector>
 
-int GameEntities::getPositionY()
+std::vector<GameBoard::Element> GameEntities::getConnentedElements()
 {
-    return positionY_;
+    return connectedElements_;
 }
-
-int GameEntities::getPositionX()
-{
-    return positionX_;
-}
-
-int GameEntities::getColor()
-{
-    return color_;
-}
-
-int GameEntities::getSpeed()
-{
-    return speed_;
-}
-
-chtype GameEntities::getSign()
-{
-    return sign_;
-}
-
-GameEntities::Direction GameEntities::getDiretion()
+GameEntities::Direction GameEntities::getDirection()
 {
     return direction_;
 }
@@ -35,40 +14,32 @@ GameEntities::Type GameEntities::getType()
 {
     return type_;
 }
-
-
-
-void GameEntities::setPositionY(int newPositionY)
+int GameEntities::getSpeed()
 {
-    positionY_ = newPositionY;
+    return speed_;
 }
 
-void GameEntities::setPositionX(int newPositionX)
+void GameEntities::move()
 {
-    positionX_ = newPositionX;
-}
-
-void GameEntities::setColor(int newColor)
-{
-    color_ = newColor;
-}
-
-void GameEntities::setSpeed(int newSpeed)
-{
-    speed_ = newSpeed;
-}
-
-void GameEntities::setSign(chtype newsign)
-{
-    sign_ = newsign;
-}
-
-void GameEntities::setDiretion(Direction newDirection)
-{
-    direction_ = newDirection;
-}
-
-void GameEntities::setType(Type newType)
-{
-    type_ = newType;
+    for (size_t i = 0; i < connectedElements_.size; i++)
+    {
+        switch (direction_)
+        {
+        case Direction::LEFT:
+            connectedElements_.at(i).location_.second--;
+            break;
+        case Direction::RIGHT:
+            connectedElements_.at(i).location_.second++;
+            break;
+        case Direction::UP:
+            connectedElements_.at(i).location_.first--;
+            break;
+        case Direction::DONWN:
+            connectedElements_.at(i).location_.first++;
+            break;                                
+        default:
+            break;
+        }
+    }
+    
 }

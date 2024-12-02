@@ -4,30 +4,39 @@
 #include <vector>
 #include "GameEntities.hpp"
 
+struct BoardElement
+{
+    std::pair<int, int> location_;
+    chtype sign_;
+    int color_;
+};
+
 class GameBoard
 {
 public:
+
+
     GameBoard();
     GameBoard(int height, int width);
     ~GameBoard() = default;
 
-    GameEntities getEntitieAtPosition(int height, int width);
-    chtype getSignAtPosition(int height, int width);
+    std::vector<BoardElement> getConnectedElements;
+    chtype getSignAt(std::pair<int, int> location);
+    int getColorAt(std::pair<int, int> location);
     int getheight();
     int getWidth();
 
-    void setEntitieAtPosition(GameEntities newEntiie, int height, int width);
-    void setSignAtPositon(chtype newSign, int height, int width);
-    void setHeight(int newHeight);
-    void setWidth(int newWidth);
+    void setBoardBorder();
+    void setPlaer(std::pair<int, int> location);
 
+    void addEnemy(std::pair<int, int> location);
     void refresh();
-    void clear();
 
 private:
 
-    std::vector<std::vector<GameEntities>> allEntitiesPositions_;
-    std::vector<std::vector<chtype>> allSignsPositions_;
+    std::vector<std::vector<GameEntities*>> allEntitiesPositions_;
     WINDOW *window_;
     int height_, width_;
+
+    void clear();
 };

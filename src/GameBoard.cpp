@@ -16,14 +16,14 @@ GameBoard::GameBoard(int height, int width)
     
 }
 
-GameEntities GameBoard::getEntitieAtPosition(int height, int width)
+GameEntities* GameBoard::getEntitieAtPosition(std::pair<int, int> location)
 {
-    return allEntitiesPositions_.at(height).at(width);
+    return allEntitiesPositions_.at(location.first).at(location.second);
 }
 
-chtype GameBoard::getSignAtPosition(int height, int width)
+chtype GameBoard::getSignAtPosition(std::pair<int, int> location)
 {
-    return allSignsPositions_.at(height).at(width);
+    return allSignsPositions_.at(location.first).at(location.second);
 }
 
 int GameBoard::getheight()
@@ -38,14 +38,14 @@ int GameBoard::getWidth()
 
 
 
-void GameBoard::setEntitieAtPosition(GameEntities newEntiie, int height, int width)
+void GameBoard::setEntitieAtPosition(GameEntities newEntiie, std::pair<int, int> location)
 {
-    allEntitiesPositions_.at(height).at(width) = newEntiie;
+    allEntitiesPositions_.at(location.first).at(location.second) = &newEntiie;
 }
 
-void GameBoard::setSignAtPositon(chtype newSign, int height, int width)
+void GameBoard::setSignAtPositon(chtype newSign, std::pair<int, int> location)
 {
-    allSignsPositions_.at(height).at(width) = newSign;
+    allSignsPositions_.at(location.first).at(location.second) = newSign;
 }
 
 void GameBoard::setHeight(int newHeight)

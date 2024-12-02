@@ -2,6 +2,8 @@
 
 #include <ncurses.h>
 #include <chrono>
+#include <vector>
+#include "GameBoard.hpp"
 
 class GameEntities
 {
@@ -27,27 +29,19 @@ public:
     GameEntities() = default;
     ~GameEntities() = default;
 
-    int getPositionY();
-    int getPositionX();
-    int getColor();
-    int getSpeed();
-    chtype getSign();
-    Direction getDiretion();
+    std::vector<BoardElement> getConnectedElements();
+    Direction getDirection();
     Type getType();
+    int getSpeed();
 
-    void setPositionY(int newPositionY);
-    void setPositionX(int newPositionX);
-    void setColor(int newColor);
-    void setSpeed(int newSpeed);
-    void setSign(chtype newsign);
-    void setDiretion(Direction newDirection);
-    void setType(Type newType);
+    void move();
+
 
 protected:
-    int positionY_, positionX_, color_;
-    int speed_;
-    chtype sign_;
+
+    std::vector<BoardElement> connectedElements_;
     Direction direction_;
     Type type_;
-
+    int speed_;
+    
 };
