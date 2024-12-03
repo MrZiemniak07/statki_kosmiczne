@@ -1,5 +1,13 @@
+
 #include "GameBoard.hpp"
 #include <ncurses.h>
+
+struct GameBoard::BoardElement
+{
+    std::pair<int, int> location_;;
+    chtype sign_;
+    PairColors pairColor_;
+};
 
 GameBoard::GameBoard()
 {
@@ -16,14 +24,29 @@ GameBoard::GameBoard(int height, int width)
     
 }
 
-GameEntities* GameBoard::getEntitieAtPosition(std::pair<int, int> location)
+std::vector<GameBoard::BoardElement> GameBoard::getConnectedElementsAt(std::pair<int, int> location)
 {
-    return allEntitiesPositions_.at(location.first).at(location.second);
+    return allEntitiesPositions_.at(location.first).at(location.second)->getConnectedElements();
 }
 
-chtype GameBoard::getSignAtPosition(std::pair<int, int> location)
+chtype GameBoard::getSignAt(std::pair<int, int> location)
 {
-    return allSignsPositions_.at(location.first).at(location.second);
+    return allBoardElementsPositions_.at(location.first).at(location.second).sign_;
+}
+
+PairColors GameBoard::getPairColorAt(std::pair<int, int> location)
+{
+    return allBoardElementsPositions_.at(location.first).at(location.second).pairColor_
+}
+
+GameEntities::Direction GameBoard::getDirectionAt(std::pair<int, int> location)
+{
+    return allEntitiesPositions_.at(location.first).at(location.second)->getDirection();
+}
+
+GameEntities::Type GameBoard::GetTypeAt(std::pair<int, int> location)
+{
+    return allEntitiesPositions_.at(location.first).at(location.second)->getType();
 }
 
 int GameBoard::getheight()
@@ -35,29 +58,6 @@ int GameBoard::getWidth()
 {
     return width_;
 }
-
-
-
-void GameBoard::setEntitieAtPosition(GameEntities newEntiie, std::pair<int, int> location)
-{
-    allEntitiesPositions_.at(location.first).at(location.second) = &newEntiie;
-}
-
-void GameBoard::setSignAtPositon(chtype newSign, std::pair<int, int> location)
-{
-    allSignsPositions_.at(location.first).at(location.second) = newSign;
-}
-
-void GameBoard::setHeight(int newHeight)
-{
-    height_ = newHeight;
-}
-
-void GameBoard::setWidth(int newWidth)
-{
-    width_ = newWidth;
-}
-
 
 
 void GameBoard::refresh()

@@ -1,19 +1,30 @@
+
 #include "GameEntities.hpp"
 
+#include "GameBoard.hpp"
 #include <vector>
+#include "CONSTANTS.hpp"
 
-std::vector<GameBoard::Element> GameEntities::getConnentedElements()
+bool GameEntities::isCreatable()
+{
+    return false;
+}
+
+std::vector<GameBoard::BoardElement> GameEntities::getConnectedElements()
 {
     return connectedElements_;
 }
+
 GameEntities::Direction GameEntities::getDirection()
 {
     return direction_;
 }
+
 GameEntities::Type GameEntities::getType()
 {
     return type_;
 }
+
 int GameEntities::getSpeed()
 {
     return speed_;
@@ -21,7 +32,7 @@ int GameEntities::getSpeed()
 
 void GameEntities::move()
 {
-    for (size_t i = 0; i < connectedElements_.size; i++)
+    for (int i = 0; i < connectedElements_.size(); i++)
     {
         switch (direction_)
         {
@@ -42,4 +53,9 @@ void GameEntities::move()
         }
     }
     
+}
+
+void GameEntities::create()
+{
+
 }

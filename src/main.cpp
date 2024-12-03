@@ -16,6 +16,7 @@ int main()
     noecho();
     curs_set(0);
     start_color();
+    initGameColorPairs();
     
 
     Game game(BOARD_ROWS, BOARD_COLS);

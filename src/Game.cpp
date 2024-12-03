@@ -61,7 +61,20 @@ void Game::updateState()
 
 void Game::redraw()
 {
+    gameBoard_.clear();
+
+    for (int height = 0; height < gameBoard_.getheight(); height   ++)
+    {
+        for (int width = 0; width < gameBoard_.getWidth; width++)
+        {
+            attron(gameBoard_.getColorAt({height, width}));
+            mvprintw(height, width, gameBoard_.getSignAt({height   ,width});
+            attroff(COLOR_RED);
+        }
+        
+    }
+    
     gameBoard_.refresh();
-    // NA POTEM
+    
 }
 
